@@ -1,0 +1,1 @@
+// Create Module pattern and Singleton
