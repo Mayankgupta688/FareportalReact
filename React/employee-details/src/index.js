@@ -1,6 +1,4 @@
 import ReactDOM from "react-dom";
+import App from "./components/EmployeeDetailsComponent";
 
-ReactDOM.render(
-    <h2>This is React Controlled Element...</h2>,
-    document.getElementById("root")
-)
+ReactDOM.render(<App></App>, document.getElementById("root"))

@@ -1,0 +1,6 @@
+// Add an Input box
+// Create a variable "inputValue"
+
+-- Getter and Setters....
+
+-- Sync between Input box value and variable value...

@@ -9,5 +9,6 @@ When you move your mouse outside, color should change to black
 ** Use JavaScript...
 
 - DOm Manulation
+- DOm Manulation
 - What is DOM
 - Events in JavaScript
