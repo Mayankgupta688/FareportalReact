@@ -1,41 +1,32 @@
-export default function EmployeeDetailsComponent() {
+import "../styles/EmployeeDetailsComponentStyle.css";
 
-    var details = {
-        name: "Mayank",
-        avatar: "https://www.insureon.com/-/media/blog/posts/2021/photo_group-of-employees-working-on-project.png?h=370&iar=0&w=750&rev=3faabd3c0f7c4e11966caaa037fa4fc8",
-        createdAt: "Today",
-        id: 1
-    }
+export default function EmployeeDetailsComponent(props) {
 
-    return (
-        <div>
-            <img src={details.avatar} alt={details.name} />
-            <h1>User Name is: {details.name}</h1>
-            <p>
-                <span>The User Selected has the Following Id: {details.id}.</span>
-                <span>The User was created On: {details.createdAt}</span>
-            </p>
-        </div>
-    )
-}
-
-export function EmployeeDetailsComponentOther() {
-
-    var details = {
-        name: "Mayank",
-        avatar: "https://www.insureon.com/-/media/blog/posts/2021/photo_group-of-employees-working-on-project.png?h=370&iar=0&w=750&rev=3faabd3c0f7c4e11966caaa037fa4fc8",
-        createdAt: "Today",
-        id: 1
-    }
+    var styleObject =  {
+        containerStyle: {
+            width: "18rem", 
+            margin: "20px", 
+            display: "inline-block"
+        }, headerStyling: {
+            color: "aqua"
+        }, buttonStyle: {
+            color: "red"
+        }
+    };
 
     return (
-        <div>
-            <img src={details.avatar} alt={details.name} />
-            <h1>User Name is: {details.name}</h1>
-            <p>
-                <span>The User Selected has the Following Id: {details.id}.</span>
-                <span>The User was created On: {details.createdAt}</span>
-            </p>
-        </div>
+          <div className="card" style={styleObject.containerStyle}>
+              <img src="https://www.insureon.com/-/media/blog/posts/2021/photo_group-of-employees-working-on-project.png?h=370&iar=0&w=750&rev=3faabd3c0f7c4e11966caaa037fa4fc8" className="card-img-top" alt={props.name} />
+              <div className="card-body">
+                  <div>
+                    { props.id % 2 !== 0 && <h5 style={styleObject.headerStyling} className="card-title">{props.name}: Odd Id Value</h5>}
+                    { props.id % 2 === 0 && <h5 style={styleObject.headerStyling} className="card-title">{props.name}: Even Id Value</h5>}
+                    <div>
+                        <p className="card-text">{props.id} <b>{props.createdAt}</b> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <input type="button" style={styleObject.buttonStyle} className="btn btn-primary" value="Go somewhere" />
+                  </div>
+              </div>
+          </div>
     )
 }

@@ -1,4 +1,4 @@
 import ReactDOM from "react-dom";
-import App from "./components/EmployeeDetailsComponent";
+import App from "./classComponent/DataBinding";
 
 ReactDOM.render(<App></App>, document.getElementById("root"))
