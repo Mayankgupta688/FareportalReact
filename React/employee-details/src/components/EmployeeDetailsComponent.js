@@ -17,6 +17,7 @@ export default function EmployeeDetailsComponent(props) {
                         <p className="card-text">{props.id} <b>{props.createdAt}</b> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                     <input type="button" id={props.id} className="btn btn-primary" value="Delete" onClick={props.deleteEmployee} />
+                    <input style={{marginLeft: "5px"}} type="button" name={props.id} className="btn btn-primary" value="Update" onClick={props.updateEmployee} />
                   </div>
               </div>
           </div>

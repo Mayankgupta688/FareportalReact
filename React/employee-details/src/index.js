@@ -1,4 +1,8 @@
 import ReactDOM from "react-dom";
-import App from "./hooksImplementation/HierarchyComponent";
+import App from "./hooksImplementation/CreateUseStateCounterAutomatic";
 
-ReactDOM.render(<App></App>, document.getElementById("root"))
+ReactDOM.render((
+    <div>
+        <App></App>
+    </div>
+), document.getElementById("root"))

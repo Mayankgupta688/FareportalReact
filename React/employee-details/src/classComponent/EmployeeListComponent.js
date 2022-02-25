@@ -4,6 +4,7 @@ import EmployeeDetailsComponent from "../components/EmployeeDetailsComponent"
 
 export default class EmployeeListComponent extends React.Component {
     constructor() {
+
         super();
         this.state = {
             employeeList: []
@@ -16,10 +17,16 @@ export default class EmployeeListComponent extends React.Component {
             <div>
                 <h1>Employee List is given Below:</h1>
                 {this.state.employeeList.map((employee) => {
-                    return <EmployeeDetailsComponent key={employee.id} {...employee} deleteEmployee={this.deleteEmployee}></EmployeeDetailsComponent>
+                    return <EmployeeDetailsComponent key={employee.id} {...employee} updateEmployee={this.updateEmployee} deleteEmployee={this.deleteEmployee}></EmployeeDetailsComponent>
                 })}
             </div>
         )
+    }
+
+    updateEmployee = (event) => {
+        debugger;
+        var employeeId = event.target.name;
+        this.props.history.push("/update/" + employeeId);
     }
 
     deleteEmployee = (event) => {
