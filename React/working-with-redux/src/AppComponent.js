@@ -16,11 +16,15 @@ class AppComponent extends React.Component {
                 <input type="button" value="Delete All" /><br/><br/>
 
                 {this.props.employees.map((employee) => {
-                    return <EmployeeDetailsComponent key={employee.id} {...employee}></EmployeeDetailsComponent>
+                    return <EmployeeDetailsComponent key={employee.id} {...employee} deleteSpecficEmployee={this.deleteSpecficEmployee}></EmployeeDetailsComponent>
                 })}
             </div>
         )
     }   
+
+    deleteSpecficEmployee = (event) => {
+        this.props.deleteOneEmployee(event.target.id)
+    }
 
     getEmployeeList = () => {
         debugger;
@@ -50,7 +54,7 @@ function EmployeeDetailsComponent(props) {
                       <div>
                         <p className="card-text">{props.id} <b>{props.createdAt}</b> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
-                    <input type="button" id={props.id} className="btn btn-primary" value="Delete" onClick={props.deleteEmployee} />
+                    <input type="button" id={props.id} className="btn btn-primary" value="Delete" onClick={props.deleteSpecficEmployee} />
                     <input style={{marginLeft: "5px"}} type="button" name={props.id} className="btn btn-primary" value="Update" onClick={props.updateEmployee} />
                   </div>
               </div>

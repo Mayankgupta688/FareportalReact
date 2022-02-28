@@ -12,7 +12,7 @@ export function deleteAllEmployees() {
     }
 }
 
-export function deleteSpecificEmployees(empId) {
+export function deleteOneEmployee(empId) {
     return {
         type: "DELETE_SPECIFIC_EMPLOYEES",
         payload: empId

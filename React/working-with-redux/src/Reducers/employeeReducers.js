@@ -8,5 +8,11 @@ export default function employeeReducer(store = [], action) {
         return [];
     }
 
+    if(action.type === "DELETE_SPECIFIC_EMPLOYEES") {
+        return store.filter((employee) => {
+            return employee.id != action.payload
+        })
+    }
+
     return store;
 }
